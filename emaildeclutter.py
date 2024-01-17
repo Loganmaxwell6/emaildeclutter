@@ -1,5 +1,6 @@
 import ezgmail
 from tqdm import tqdm
+import winsound
 
 class Tools:
     # mark n recent emails as read
@@ -92,5 +93,6 @@ class Tools:
 if __name__ == '__main__':
     ezgmail.init(tokenFile='token.json', credentialsFile='credentials.json')
     assert ezgmail.LOGGED_IN == True
-    Tools().show_recent(n=10)
+    Tools().delete_recent(n=100, safe=False, show=False)
     print('\n>Exiting...\n')
+    winsound.Beep(2000, 2)
